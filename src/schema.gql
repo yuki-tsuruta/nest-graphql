@@ -8,22 +8,22 @@ A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date
 scalar DateTime
 
 type Mutation {
-  createUser(newUser: NewUser!): String!
-  removeUser(id: Int!): Boolean!
+  createProfile(newProfile: NewProfile!): String!
+  removeProfile(id: Int!): Boolean!
 }
 
-input NewUser {
+input NewProfile {
   age: Int!
   name: String!
 }
 
-type Query {
-  users: [UserModel!]
-}
-
-type UserModel {
+type ProfileModel {
   age: Int!
   createdAt: DateTime!
   id: ID!
   name: String!
+}
+
+type Query {
+  profiles: [ProfileModel!]
 }

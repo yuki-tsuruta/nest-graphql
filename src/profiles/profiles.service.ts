@@ -1,14 +1,14 @@
 import { Injectable } from '@nestjs/common';
-import { NewUser } from './user/dto/newUser';
-import { UserModel } from './user/user';
+import { NewProfile } from './profile/dto/profileUser';
+import { ProfileModel } from './profile/profile';
 
 @Injectable()
-export class UsersService {
-  create(newUser: NewUser) {
+export class ProfilesService {
+  create(newProfile: NewProfile) {
     return 'This action adds a new user';
   }
 
-  findOne(): UserModel[] {
+  findOne(): ProfileModel[] {
     return [
       {
         id: 1,
