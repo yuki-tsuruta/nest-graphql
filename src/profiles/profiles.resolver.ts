@@ -1,6 +1,6 @@
 import { Inject, NotFoundException } from '@nestjs/common';
 import { Args, Int, Mutation, Query, Resolver } from '@nestjs/graphql';
-import { NewProfile } from './profile/dto/profileUser';
+import { NewProfile } from './profile/dto/profileDto';
 import { ProfileModel } from './profile/profile';
 import { ProfilesService } from './profiles.service';
 
@@ -12,11 +12,11 @@ export class ProfilesResolver {
 
   @Query((returns) => [ProfileModel], { name: 'profiles', nullable: true })
   getProfile() {
-    const user = this.profilesService.findOne();
-    if (!user) {
+    const profiles = this.profilesService.findOne();
+    if (!profiles) {
       throw new NotFoundException();
     }
-    return user;
+    return profiles;
   }
 
   @Mutation((returns) => String)

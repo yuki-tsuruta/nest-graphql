@@ -1,5 +1,5 @@
 import { Injectable } from '@nestjs/common';
-import { NewProfile } from './profile/dto/profileUser';
+import { NewProfile } from './profile/dto/profileDto';
 import { ProfileModel } from './profile/profile';
 
 @Injectable()
